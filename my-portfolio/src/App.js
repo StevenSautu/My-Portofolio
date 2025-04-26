@@ -6,6 +6,9 @@ import AboutMe from './components/AboutMe';
 import ProjectCard from './components/ProjectCard';
 import Skills from './components/skills';
 import Achievements from './components/achievements';
+import ContactForm from './components/ContactForm';
+import ScrollToTop from './components/ScrollToTop';
+import DarkModeToggle from './components/DarkModeToggle';
 import Footer from './components/Footer';
 
 function App() {
@@ -53,7 +56,10 @@ function App() {
           </div>
         </section>
         <Achievements />
+        <ContactForm />
       </main>
+      <ScrollToTop />
+      <DarkModeToggle />
       <Footer />
     </div>
   );
