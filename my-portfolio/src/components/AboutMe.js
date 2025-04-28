@@ -6,37 +6,32 @@ const AboutMe = () => {
       <div className="container">
         <h2 className="section-title">About Me</h2>
         <div className="about-content">
+          <div className="about-image">
+            <img src="/assets/images/steve.jpg" alt="Steven Sautu" />
+          </div>
           <div className="about-text">
             <p>
-              Hello! I'm Steven Sautu, a passionate Full Stack Developer with a keen eye for creating
-              elegant solutions to complex problems. With a strong foundation in both front-end and
-              back-end development, I strive to build scalable and user-friendly applications.
+              <strong>Software Developer Engineer, IT Support Specialist, and At Agrivion</strong> based in Lusaka, Zambia 🇿🇲🇿🇲, with a strong background in software engineering. I am passionate about creating efficient, scalable, and robust software solutions that address real-world challenges. My work is rooted in solving complex problems through well-structured, high-quality code and system design.
             </p>
             <p>
-              I am currently a fourth-year student at Chalimbana University pursuing a Bachelor of ICT - Education.
-              My journey in software development began with a curiosity for how things work on the web.
-              Since then, I've worked on various projects, from small business websites to complex
-              enterprise applications. I'm constantly learning and adapting to new technologies to
-              deliver the best possible solutions.
+              In addition to software development, I provide IT support services, ensuring smooth operation and maintenance of systems. I have experience troubleshooting technical issues, optimizing workflows, and enhancing system performance. Whether working on backend systems, databases, or providing hands-on support, I strive to deliver reliable and impactful solutions.
             </p>
             <p>
-              Based in Lusaka, Zambia, I'm passionate about leveraging technology to solve real-world problems
-              and create meaningful experiences for users. I believe in writing clean, maintainable code
-              and following best practices in software development.
+              With a commitment to continuous learning, I focus on staying current with the latest technologies, ensuring that I bring the best practices to each project. My goal is to help organizations thrive by integrating innovative software engineering practices with reliable IT support.
             </p>
-          </div>
-          <div className="about-stats">
-            <div className="stat-item">
-              <h3>3+</h3>
-              <p>Years Experience</p>
-            </div>
-            <div className="stat-item">
-              <h3>20+</h3>
-              <p>Projects Completed</p>
-            </div>
-            <div className="stat-item">
-              <h3>15+</h3>
-              <p>Happy Clients</p>
+            <div className="about-stats">
+              <div className="stat-item">
+                <h3>3+</h3>
+                <p>Years Experience</p>
+              </div>
+              <div className="stat-item">
+                <h3>10+</h3>
+                <p>Projects Completed</p>
+              </div>
+              <div className="stat-item">
+                <h3>5+</h3>
+                <p>Technologies Mastered</p>
+              </div>
             </div>
           </div>
         </div>
