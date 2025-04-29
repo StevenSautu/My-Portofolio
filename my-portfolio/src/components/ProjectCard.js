@@ -11,17 +11,15 @@ const ProjectCard = ({ title, description, technologies, imageUrl, projectUrl, g
         <p>{description}</p>
         <div className="technologies">
           {technologies.map((tech, index) => (
-            <span key={index} className="tech-tag">
-              {tech}
-            </span>
+            <span key={index} className="tech-tag">{tech}</span>
           ))}
         </div>
         <div className="project-links">
-          <a href={projectUrl} target="_blank" rel="noopener noreferrer" className="live-demo">
-            Live Demo
+          <a href={projectUrl} className="live-demo" target="_blank" rel="noopener noreferrer">
+            <i className="fas fa-external-link-alt"></i> Live Demo
           </a>
-          <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="github-link">
-            GitHub
+          <a href={githubUrl} className="github-link" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-github"></i> GitHub
           </a>
         </div>
       </div>
