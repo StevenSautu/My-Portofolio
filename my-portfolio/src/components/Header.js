@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './Header.css';
 
@@ -31,6 +30,9 @@ const Header = () => {
               <li><a href="#contact">Contact</a></li>
               <li><a href="#skills">Skills</a></li>
               <li><a href="#achievements">Achievements</a></li>
+              <li><a href="#certificates">Certificates</a></li>
+
+              
             </ul>
           </nav>
         </div>
@@ -61,6 +63,7 @@ const Header = () => {
               <li><a href="#contact">Contact</a></li>
               <li><a href="#skills">Skills</a></li>
               <li><a href="#achievements">Achievements</a></li>
+              <li><a href="#certificates">Certificates</a></li>
             </ul>
           </nav>
         )}
