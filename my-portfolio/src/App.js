@@ -10,6 +10,7 @@ import ContactForm from './components/ContactForm';
 import ScrollToTop from './components/ScrollToTop';
 import DarkModeToggle from './components/DarkModeToggle';
 import Footer from './components/Footer';
+import Certificates from './components/Certificates';
 
 function App() {
   const projects = [
@@ -55,6 +56,7 @@ function App() {
             </div>
           </div>
         </section>
+        <Certificates />
         <Achievements />
         <ContactForm />
       </main>
