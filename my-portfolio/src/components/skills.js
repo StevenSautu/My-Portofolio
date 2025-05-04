@@ -13,6 +13,7 @@ const Skills = () => {
         { name: "Responsive Design", level: 91 }
       ]
     },
+    
     {
       category: "Backend",
       skills: [

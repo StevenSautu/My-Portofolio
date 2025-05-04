@@ -1,4 +1,5 @@
 import React from 'react';
+import profileImg from '../assets/images/steve.jpg';
 
 const AboutMe = () => {
   return (
@@ -7,7 +8,7 @@ const AboutMe = () => {
         <h2 className="section-title">About Me</h2>
         <div className="about-content">
           <div className="about-image">
-            <img src="/assets/images/steve.png" alt="Steven Sautu" />
+            <img src={profileImg} alt="Steven Sautu" />
           </div>
           <div className="about-text">
             <p>

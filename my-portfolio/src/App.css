@@ -17,6 +17,8 @@
   --transition: all 0.3s ease;
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Open Sans', sans-serif;
+  --primary-orange: #ffb300;
+  --primary-green: #219a3b;
 }
 
 body {
@@ -344,22 +346,13 @@ nav a:hover::after {
   position: relative;
 }
 
-.about-image::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(52, 152, 219, 0.2), rgba(44, 62, 80, 0.4));
-  z-index: 1;
-}
-
 .about-image img {
   width: 100%;
   height: auto;
   display: block;
   transition: transform 0.5s ease;
+  border: 4px solid var(--primary-orange);
+  border-radius: 50%;
 }
 
 .about-image:hover img {
@@ -393,8 +386,13 @@ nav a:hover::after {
 
 .stat-item h3 {
   font-size: 2.5rem;
-  color: var(--primary-color);
+  color: var(--primary-orange);
   margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+  color: var(--primary-green);
+  font-size: 1.1rem;
 }
 
 /* Skills Section Styles */
@@ -1032,4 +1030,22 @@ body.dark-mode .form-group textarea:focus {
 body.dark-mode .form-group input::placeholder,
 body.dark-mode .form-group textarea::placeholder {
   color: #95a5a6;
+}
+
+/* About Me section color theme */
+.about-section .section-title {
+  color: var(--primary-green);
+}
+
+.about-content .about-image img {
+  border: 4px solid var(--primary-orange);
+  border-radius: 50%;
+}
+
+.about-stats .stat-item h3 {
+  color: var(--primary-orange);
+}
+
+.about-stats .stat-item p {
+  color: var(--primary-green);
 }
