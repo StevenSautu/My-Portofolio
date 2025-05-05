@@ -18,7 +18,7 @@ function App() {
       title: "Agrivion AI",
       description: "An AI-powered platform for farmers to optimize crop management, pest control, and yield prediction.",
       technologies: ["React", "Node.js", "TensorFlow", "Python", "MongoDB"],
-      imageUrl: "/assets/images/agrivion.png",
+      imageUrl: "../assets/images/agrivion.png",
       projectUrl: "#",
       githubUrl: "#"
     },
@@ -26,7 +26,7 @@ function App() {
       title: "Zentra Smart Shopping",
       description: "A team project presented at the 16th ICT-AGM, featuring smart shopping recommendations and price tracking.",
       technologies: ["React", "Firebase", "Material-UI", "Node.js"],
-      imageUrl: "/assets/images/Logo-zentra.png",
+      imageUrl: "../assets/images/Logo-zentra.png",
       projectUrl: "#",
       githubUrl: "#"
     },
@@ -34,7 +34,7 @@ function App() {
       title: "E-Commerce Platform",
       description: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
-      imageUrl: "/assets/images/SteveCode-logo.png",
+      imageUrl: "../assets/images/SteveCode-logo.png",
       projectUrl: "https://ecommerce-demo.com",
       githubUrl: "https://github.com/yourusername/ecommerce"
     }
