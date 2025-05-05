@@ -6,8 +6,8 @@
 }
 
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2c3e50;
+  --primary-color: #219a3b;
+  --secondary-color: #ffb300;
   --accent-color: #e74c3c;
   --text-color: #333;
   --light-text: #ecf0f1;
@@ -59,7 +59,7 @@ body {
 :root {
   --background-dark: #121826;
   --light-text: #ffffff;
-  --accent-color: #3b82f6;
+  --accent-color: #ffb300;
   --heading-font: 'Poppins', sans-serif;
   --body-font: 'Inter', sans-serif;
 }
@@ -338,7 +338,7 @@ nav a:hover::after {
 
 .about-image {
   width: 100%;
-  max-width: 350px;
+  max-width: 450px;
   margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
@@ -351,8 +351,6 @@ nav a:hover::after {
   height: auto;
   display: block;
   transition: transform 0.5s ease;
-  border: 4px solid var(--primary-orange);
-  border-radius: 50%;
 }
 
 .about-image:hover img {
@@ -551,7 +549,7 @@ nav a:hover::after {
 }
 
 .live-demo:hover {
-  background: #2980b9;
+  background: #1b7e2f;
 }
 
 .github-link {
@@ -560,7 +558,7 @@ nav a:hover::after {
 }
 
 .github-link:hover {
-  background: #1a252f;
+  background: #cc8c00;
 }
 
 /* Achievements Section Styles */
@@ -678,7 +676,7 @@ nav a:hover::after {
   }
   
   .about-image {
-    max-width: 300px;
+    max-width: 400px;
     margin-bottom: 2rem;
   }
   
@@ -841,7 +839,7 @@ nav a:hover::after {
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  box-shadow: 0 0 0 2px rgba(33, 154, 59, 0.2);
 }
 
 .submit-btn {
@@ -861,7 +859,7 @@ nav a:hover::after {
 }
 
 .submit-btn:hover {
-  background: #2980b9;
+  background: #1b7e2f;
 }
 
 .submit-btn:disabled {
@@ -917,7 +915,7 @@ nav a:hover::after {
 }
 
 .scroll-to-top:hover {
-  background-color: #2980b9;
+  background-color: #1b7e2f;
   transform: translateY(-5px);
 }
 
@@ -946,7 +944,7 @@ nav a:hover::after {
 }
 
 .dark-mode-toggle:hover {
-  background-color: #1a252f;
+  background-color: #cc8c00;
   transform: translateY(-5px);
 }
 
@@ -1024,7 +1022,7 @@ body.dark-mode .form-group textarea {
 body.dark-mode .form-group input:focus,
 body.dark-mode .form-group textarea:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 0 0 2px rgba(33, 154, 59, 0.3);
 }
 
 body.dark-mode .form-group input::placeholder,
@@ -1038,8 +1036,6 @@ body.dark-mode .form-group textarea::placeholder {
 }
 
 .about-content .about-image img {
-  border: 4px solid var(--primary-orange);
-  border-radius: 50%;
 }
 
 .about-stats .stat-item h3 {
