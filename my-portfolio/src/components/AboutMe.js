@@ -24,7 +24,7 @@ const AboutMe = () => {
             </div>
             <div className="about-stats" style={{ animation: 'fadeIn 1s ease-out 0.6s', animationFillMode: 'both' }}>
               <div className="stat-item">
-                <h3>3+</h3>
+                <h3>1.5+</h3>
                 <p>Years Experience</p>
               </div>
               <div className="stat-item">
