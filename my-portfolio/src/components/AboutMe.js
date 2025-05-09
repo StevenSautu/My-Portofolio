@@ -1,28 +1,25 @@
 import React from 'react';
-import profileImg from '../assets/images/steve.jpg';
+import './AboutMe.css';
 
 const AboutMe = () => {
   return (
     <section id="about" className="about-section">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
-        <div className="about-content">
-          <div className="about-image" style={{ animation: 'fadeIn 1s ease-out' }}>
-            <img src={profileImg} alt="Steven Sautu" />
+        <div className="about-row">
+          <div className="about-heading">
+            <h1>Hi! My name is Sautu Steven</h1>
           </div>
           <div className="about-text">
-            <div style={{ animation: 'fadeIn 1s ease-out 0.3s', animationFillMode: 'both' }}>
-              <p>
-                <strong>Software Developer Engineer, IT Support Specialist, and At AgriVision</strong> based in Lusaka, Zambia 🇿🇲🇿🇲, with a strong background in software engineering. I am passionate about creating efficient, scalable, and robust software solutions that address real-world challenges. My work is rooted in solving complex problems through well-structured, high-quality code and system design.
-              </p>
-              <p>
-                In addition to software development, I provide IT support services, ensuring smooth operation and maintenance of systems. I have experience troubleshooting technical issues, optimizing workflows, and enhancing system performance. Whether working on backend systems, databases, or providing hands-on support, I strive to deliver reliable and impactful solutions.
-              </p>
-              <p>
-                With a commitment to continuous learning, I focus on staying current with the latest technologies, ensuring that I bring the best practices to each project. My goal is to help organizations thrive by integrating innovative software engineering practices with reliable IT support.
-              </p>
-            </div>
-            <div className="about-stats" style={{ animation: 'fadeIn 1s ease-out 0.6s', animationFillMode: 'both' }}>
+            <p>
+              <strong>Software Developer Engineer, IT Support Specialist, and at AgriVision</strong> based in Lusaka, Zambia 🇿🇲, with a strong background in software engineering. I am passionate about creating efficient, scalable, and robust software solutions that address real-world challenges.
+            </p>
+            <p>
+              In addition to software development, I provide IT support services, ensuring smooth operation and maintenance of systems. I have experience troubleshooting technical issues, optimizing workflows, and enhancing system performance.
+            </p>
+            <p>
+              With a commitment to continuous learning, I focus on staying current with the latest technologies, ensuring that I bring the best practices to each project.
+            </p>
+            <div className="about-stats">
               <div className="stat-item">
                 <h3>1.5+</h3>
                 <p>Years Experience</p>
