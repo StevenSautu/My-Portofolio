@@ -1,4 +1,6 @@
 import React from 'react';
+import './ProjectCard.css';
+
 
 const ProjectCard = ({ title, description, technologies, imageUrl, projectUrl, githubUrl }) => {
   return (
