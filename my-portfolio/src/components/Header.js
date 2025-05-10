@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
+import profileImg from '../assets/images/steve.jpg';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
