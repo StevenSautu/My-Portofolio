@@ -29,7 +29,7 @@ const Footer = () => {
             <p><i className="fas fa-graduation-cap"></i> Fourth Year Student, Bachelor of ICT - Education, Chalimbana University</p>
           </div>
         </div>
-        
+      
         <div className="footer-bottom">
           <p className="copyright">&copy; {new Date().getFullYear()} All rights reserved.</p>
         </div>
