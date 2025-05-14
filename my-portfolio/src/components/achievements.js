@@ -19,6 +19,7 @@ const Achievements = () => {
       date: "October 2023",
       icon: "📜"
     },
+    
     {
       id: 3,
       title: "Hackathon Winner",
