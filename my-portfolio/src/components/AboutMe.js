@@ -4,34 +4,23 @@ import './AboutMe.css';
 const AboutMe = () => {
   return (
     <section id="about" className="about-section">
-      <div className="container">
-        <div className="about-row">
-          <div className="about-heading">
-            <h1>Hi! My name is Sautu Steven</h1>
+      <div className="full-page-container">
+        <div className="about-grid">
+          <div className="name-column">
+            <div className="name-content">
+              <p className="greeting">Hi!</p>
+              <h1 className="name">SAUTU STEVEN</h1>
+              <p className="title">SOFTWARE DEVELOPER</p>
+            </div>
           </div>
-          <div className="about-text">
-            <p>
-              <strong>Software Developer Engineer, IT Support Specialist, and at AgriVision</strong> based in Lusaka, Zambia 🇿🇲, with a strong background in software engineering. I am passionate about creating efficient, scalable, and robust software solutions that address real-world challenges.
-            </p>
-            <p>
-              In addition to software development, I provide IT support services, ensuring smooth operation and maintenance of systems. I have experience troubleshooting technical issues, optimizing workflows, and enhancing system performance.
-            </p>
-            <p>
-              With a commitment to continuous learning, I focus on staying current with the latest technologies, ensuring that I bring the best practices to each project.
-            </p>
-            <div className="about-stats">
-              <div className="stat-item">
-                <h3>1.5+</h3>
-                <p>Years Experience</p>
-              </div>
-              <div className="stat-item">
-                <h3>10+</h3>
-                <p>Projects Completed</p>
-              </div>
-              <div className="stat-item">
-                <h3>5+</h3>
-                <p>Technologies Mastered</p>
-              </div>
+          <div className="description-column">
+            <div className="description-content">
+              <p className="description-text">
+                I am a motivated and enthusiastic individual with a solid background in Information and Communication Technology (ICT) and a strong passion for Software Development and Systems Engineering. Currently in my fourth year of the Bachelor of ICT with Education program at Chalimbana University, I am keen to discover innovative solutions that make a significant global impact.
+              </p>
+              <p className="description-text">
+                My goal is to utilize my skills in software development and systems engineering to develop robust and scalable solutions that enhance educational methodologies and strengthen digital security. With a focus on creativity, innovation, and inclusivity, I am prepared to contribute to an organization that prioritizes excellence and embraces new technological challenges on an international scale.
+              </p>
             </div>
           </div>
         </div>
