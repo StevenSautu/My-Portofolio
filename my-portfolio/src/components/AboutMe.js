@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './AboutMe.css';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
 import profileImage from '../assets/images/steve.jpg';
 
 const AboutMe = () => {
+  const [visitCount, setVisitCount] = useState(0);
+
+  useEffect(() => {
+    axios.get('https://api.countapi.xyz/hit/sautusteve.dev/visits')
+      .then(res => setVisitCount(res.data.value))
+      .catch(err => console.error('Visitor count error:', err));
+  }, []);
+
   return (
     <section id="about" className="about-section">
       <div className="about-container">
@@ -18,72 +27,43 @@ const AboutMe = () => {
             </div>
             <div className="intro-text">
               <div className="intro-header">
-                <h2 className="greeting">Hi, I'm</h2>
+                <h2 className="greeting">Hi!, I'm</h2>
                 <h1 className="name">Sautu Steven</h1>
                 <h3 className="title">Software Developer</h3>
               </div>
               <div className="intro-content">
                 <p className="description">
-                  I'm a passionate and results-driven software developer with a strong foundation in 
-                  Information and Communication Technology (ICT). Currently in my final year at 
-                  Chalimbana University, I combine academic excellence with practical skills gained through 
-                  hands-on projects, internships, and collaborative tech initiatives. My work focuses on developing 
-                  innovative, efficient, and scalable software solutions that address real-world problems.
+                  I'm an aspiring and results-driven software developer with a strong foundation in Information and Communication Technology. 
+                  Now in my final year at Chalimbana University, I blend academic knowledge with hands-on experience from projects, internships, 
+                  and tech initiatives. I focus on building scalable, user-friendly software that solves real-world challenges, especially in education, 
+                  agriculture, and public service. I'm also an articulate public speaker, passionate about sharing insights and inspiring others through 
+                  tech conversations. My goal is to use technology to promote inclusion, accessibility, and sustainable progress.
                 </p>
+
                 <div className="cta-buttons">
-                  <button className="btn primary-btn">Get in Touch</button>
-                  <button className="btn secondary-btn">View Projects</button>
+                  <a href="#contact" className="btn primary-btn">Get in Touch</a>
+                  <a href="#projects" className="btn secondary-btn">View Projects</a>
                 </div>
+
                 <div className="social-icons">
-                  <a 
-                    href="https://github.com/sautusteve" 
-                    className="social-icon" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="GitHub Profile"
-                  >
+                  <a href="https://github.com/StevenSautu" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <FaGithub />
                   </a>
-                  <a 
-                    href="https://linkedin.com/in/sautusteve" 
-                    className="social-icon" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn Profile"
-                  >
+                  <a href="https://www.linkedin.com/in/sautu-steven-8b697228b" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <FaLinkedin />
                   </a>
-                  <a 
-                    href="https://twitter.com/sautusteve" 
-                    className="social-icon" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="Twitter Profile"
-                  >
+                  <a href="https://facebook.com/steve.erics.sautu" target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <FaFacebook />
+                  </a>
+                  <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <FaTwitter />
                   </a>
+                  <div className="visitor-count">
+                    👁️ {String(visitCount).padStart(5, '0')}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="journey-section">
-        <div className="journey-container">
-          <h3 className="journey-title">My Journey</h3>
-          <div className="journey-content">
-            <p className="journey-text">
-              I'm a software developer with a passion for creating innovative solutions
-              that address real-world challenges. Currently pursuing my Bachelor's degree 
-              in ICT with Education at Chalimbana University, I combine academic knowledge 
-              with practical experience to develop robust and scalable applications.
-              My journey has involved building educational tools, working on agriculture-based
-              tech innovations like AgriVision, and exploring AI and digital culture projects. 
-              I am particularly focused on leveraging technology to improve education and community
-              development. With every project, I strive to build inclusive systems that are 
-              adaptable, accessible, and impactful across different sectors.
-            </p>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './ScrollToTop.css';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,4 +44,4 @@ const ScrollToTop = () => {
   );
 };
 
-export default ScrollToTop; 
+export default ScrollToTop;

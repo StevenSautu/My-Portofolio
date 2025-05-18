@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
   --selective-yellow: #FFBD11ff;
@@ -84,10 +84,20 @@
 }
 
 .greeting {
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--black);
-  margin: 0;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: var(--sea-green);
+  margin: 0 0 0.5rem 0;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+  transform: rotate(-2deg);
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
 }
 
 .name {
@@ -135,14 +145,14 @@
 
 /* Now yellow is secondary and green is primary */
 .primary-btn {
-  background-color: var(--sea-green); /* Now green */
+  background-color: var(--sea-green);
   color: var(--white);
   border: 2px solid var(--sea-green);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .primary-btn:hover {
-  background-color: var(--selective-yellow); /* Now yellow on hover */
+  background-color: var(--selective-yellow);
   border-color: var(--selective-yellow);
   color: var(--black);
   transform: translateY(-2px);
@@ -151,14 +161,14 @@
 
 .secondary-btn {
   background-color: transparent;
-  color: var(--selective-yellow); /* Now yellow */
+  color: var(--selective-yellow);
   border: 2px solid var(--selective-yellow);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .secondary-btn:hover {
   background-color: transparent;
-  color: var(--sea-green); /* Now green on hover */
+  color: var(--sea-green);
   border-color: var(--sea-green);
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
@@ -169,10 +179,11 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
+  align-items: center;
 }
 
 .social-icon {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--black);
   transition: all 0.3s ease;
   text-decoration: none;
@@ -181,6 +192,29 @@
 .social-icon:hover {
   color: var(--selective-yellow);
   transform: translateY(-3px);
+}
+
+.visitor-count {
+  font-size: 1rem;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.visitor-count::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 1px;
+  background-color: var(--dark-gray);
+  opacity: 0.5;
 }
 
 /* Responsive styles */
@@ -210,6 +244,10 @@
     margin-top: 0;
     margin-left: 0;
   }
+
+  .greeting {
+    font-size: 2.1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -219,7 +257,7 @@
   }
 
   .greeting {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
   }
 
   .name {
@@ -228,6 +266,10 @@
 
   .title {
     font-size: 1.3rem;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
   }
 }
 
@@ -244,5 +286,24 @@
   
   .btn {
     width: 100%;
+  }
+
+  .social-icons {
+    gap: 1rem;
+  }
+
+  .visitor-count {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .visitor-count::before {
+    display: none;
+  }
+
+  .greeting {
+    font-size: 1.7rem;
+    animation: none;
+    transform: rotate(-1deg);
   }
 }

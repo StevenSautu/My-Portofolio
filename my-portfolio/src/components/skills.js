@@ -1,77 +1,98 @@
 import React from 'react';
 import './Skills.css';
 
-
 const Skills = () => {
   const skillCategories = [
     {
-      category: "Frontend",
-      skills: [
-        { name: "HTML5", level: 90 },
-        { name: "CSS3", level: 85 },
-        { name: "JavaScript", level: 88 },
-        { name: "React", level: 85 },
-        { name: "Vue.js", level: 75 },
-        { name: "Responsive Design", level: 91 }
-      ]
+      category: "UI/UX Design",
+      icon: "fa-pencil-ruler",
+      description: "Creating intuitive interfaces and engaging user experiences",
+      skills: ["Figma", "Photoshop", "Illustrator"]
     },
-    
     {
-      category: "Backend",
-      skills: [
-        { name: "Node.js", level: 82 },
-        { name: "Express", level: 80 },
-        { name: "PHP", level: 75 },
-        { name: "Laravel", level: 70 },
-        { name: "RESTful APIs", level: 85 },
-        { name: "GraphQL", level: 70 }
-      ]
+      category: "App Development",
+      icon: "fa-mobile-alt",
+      description: "Building performant mobile applications for Android platform",
+      skills: ["Java", "Kotlin", "Android SDK"]
+    },
+    {
+      category: "Web Development",
+      icon: "fa-code",
+      description: "Developing full-stack web applications and services",
+      skills: ["PHP", "JavaScript", "React", "Node.js"]
     },
     {
       category: "Database",
+      icon: "fa-database",
+      description: "Designing and optimizing relational database systems",
+      skills: ["MySQL", "MariaDB", "ERD Design", "MongoDB"]
+    },
+    {
+      category: "Embedded Systems",
+      icon: "fa-microchip",
+      description: "Programming microcontrollers and IoT devices",
+      skills: ["C++", "Arduino", "IoT"]
+    },
+    {
+      category: "Public Speaking",
+      icon: "fa-comments",
+      description: "Engaging audiences through technical presentations and workshops",
       skills: [
-        { name: "MySQL", level: 85 },
-        { name: "MongoDB", level: 80 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "Firebase", level: 80 }
+        "Technical presentations",
+        "Conference speaking",
+        "Workshop facilitation"
       ]
     },
     {
-      category: "Tools & Others",
+      category: "Team Leadership",
+      icon: "fa-users",
+      description: "Leading technical teams with focus on agile methodologies",
       skills: [
-        { name: "Git", level: 85 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 65 },
-        { name: "CI/CD", level: 75 },
-        { name: "Agile/Scrum", level: 80 }
+        "Team Building",
+        "Project Management",
+        "Agile Methodologies"
       ]
+    },
+    {
+      category: "Tools",
+      icon: "fa-tools",
+      description: "Development tools and version control",
+      skills: ["Git", "Github", "VS Code","Android Studio"]
+    },
+    {
+      category: "Systems",
+      icon: "fa-desktop",
+      description: "Operating systems expertise",
+      skills: ["Windows", "Linux (Mint, Ubuntu, Parrot & Kali)"]
     }
   ];
 
   return (
     <section id="skills" className="skills-section">
       <div className="container">
-        <h2 className="section-title">My Skills</h2>
-        <div className="skills-container">
+        <div className="section-header">
+          <h2 className="section-title">
+            <span className="highlight">Skills</span> & Expertise
+          </h2>
+          <p className="section-subtitle">Areas of technical proficiency and leadership</p>
+        </div>
+        
+        <div className="skills-grid">
           {skillCategories.map((category, index) => (
-            <div key={index} className="skill-category">
-              <h3>{category.category}</h3>
-              <div className="skills-list">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="skill-item">
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-percentage">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar">
-                      <div 
-                        className="skill-progress" 
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+            <div key={index} className="skill-card">
+              <div className="card-header">
+                <i className={`fas ${category.icon}`}></i>
+                <h3>{category.category}</h3>
               </div>
+              <p className="card-description">{category.description}</p>
+              <ul className="skills-list">
+                {category.skills.map((skill, skillIndex) => (
+                  <li key={skillIndex} className="skill-item">
+                    <span className="skill-bullet"></span>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

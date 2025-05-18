@@ -1,72 +1,110 @@
 import React from 'react';
 import './achievements.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faTrophy, 
+  faUserTie, 
+  faRobot, 
+  faMedal,
+  faGraduationCap,
+  faPlug,
+  faHandshake,
+  faCamera
+} from '@fortawesome/free-solid-svg-icons';
 
 const Achievements = () => {
   const achievements = [
     {
       id: 1,
-      title: "Best Developer Award",
-      organization: "Tech Excellence Awards 2023",
-      description: "Recognized for outstanding contributions to web development and innovative solutions.",
-      date: "December 2023",
-      icon: "🏆"
+      title: "Theme Interpretation Recognition",
+      organization: "ICTAZ 16th AGM",
+      description: "Honored for outstanding interpretation of the theme 'From Copper to Code', showcasing how AI can drive Zambia's digital transformation.",
+      date: "April 2025",
+      icon: faTrophy
     },
     {
       id: 2,
-      title: "Certified Full Stack Developer",
-      organization: "Meta",
-      description: "Completed advanced certification in full stack development with distinction.",
-      date: "October 2023",
-      icon: "📜"
+      title: "Secretary General",
+      organization: "CHAU-ICTAZ Student Association (2023–2025)",
+      description: "Successfully led tech initiatives and student engagement under the Chalimbana University ICTAZ Chapter.",
+      date: "2023–2025",
+      icon: faUserTie
     },
-    
     {
       id: 3,
-      title: "Hackathon Winner",
-      organization: "CodeFest 2023",
-      description: "First place in the annual coding competition for developing an innovative healthcare app.",
-      date: "August 2023",
-      icon: "💻"
+      title: "Participant – AI & Robotics Competition",
+      organization: "STEM Foundation",
+      description: "Represented in the national AI and Robotics competition, showcasing innovation in artificial intelligence and robotics solutions.",
+      date: "September 2024",
+      icon: faRobot
     },
     {
       id: 4,
-      title: "Open Source Contributor",
-      organization: "GitHub",
-      description: "Made significant contributions to popular open source projects with over 500+ stars.",
-      date: "June 2023",
-      icon: "🌟"
+      title: "Champion – Student Chapter Project Competition",
+      organization: "14th ICTAZ AGM",
+      description: "CHAU-ICTAZ Student Chapter won the project competition among universities, recognized for outstanding innovation and teamwork.",
+      date: "2023",
+      icon: faMedal
     },
     {
       id: 5,
-      title: "Tech Conference Speaker",
-      organization: "WebDev Summit 2023",
-      description: "Presented on 'Building Scalable Web Applications' to an audience of 500+ developers.",
-      date: "April 2023",
-      icon: "🎤"
+      title: "ICTAZ Student Membership",
+      organization: "Information and Communications Technology Association of Zambia",
+      description: "Recognized student member committed to professional development in Zambia's ICT sector.",
+      date: "2023–2025",
+      icon: faGraduationCap
     },
     {
       id: 6,
-      title: "Published Technical Article",
-      organization: "Medium",
-      description: "Article on 'Modern JavaScript Patterns' reached over 10,000 readers.",
-      date: "February 2023",
-      icon: "📝"
+      title: "Mastering Microcontrollers & PCBs Seminar",
+      organization: "Chalimbana University | IEEE UNZA",
+      description: "Completed intensive 4-day seminar on microcontroller programming and PCB design.",
+      date: "June 29 – July 2, 2024",
+      icon: faPlug
+    },
+    {
+      id: 7,
+      title: "Conference Volunteer",
+      organization: "ICTAZ at Avani Victoria Falls Resort",
+      description: "Assisted with event coordination and support, contributing to the smooth running of the conference.",
+      date: "March 28th – April 2nd, 2025",
+      icon: faHandshake
+    },
+    {
+      id: 8,
+      title: "Photographer & Social Media Coordinator",
+      organization: "Tech Trend - TechXpo at Mulungushi Conference Centre",
+      description: "Captured high-quality event photos and managed social media content to boost event visibility and engagement.",
+      date: "2023 & 2024",
+      icon: faCamera
     }
   ];
 
   return (
     <section id="achievements" className="achievements-section">
       <div className="container">
-        <h2 className="section-title">Achievements</h2>
+        <div className="section-header">
+          <h2 className="section-title">
+            <span className="highlight">Achievements</span> & <span className="highlight">Volunteering</span>
+          </h2>
+          <p className="section-subtitle">Recognitions and community contributions</p>
+        </div>
+        
         <div className="achievements-grid">
           {achievements.map((achievement) => (
             <div key={achievement.id} className="achievement-card">
-              <div className="achievement-icon">{achievement.icon}</div>
-              <div className="achievement-content">
-                <h3>{achievement.title}</h3>
-                <p className="organization">{achievement.organization}</p>
-                <p className="description">{achievement.description}</p>
-                <p className="date">{achievement.date}</p>
+              <div className="card-header">
+                <div className="achievement-icon">
+                  <FontAwesomeIcon icon={achievement.icon} />
+                </div>
+                <div>
+                  <h3>{achievement.title}</h3>
+                  <p className="organization">{achievement.organization}</p>
+                </div>
+              </div>
+              <p className="description">{achievement.description}</p>
+              <div className="achievement-footer">
+                <span className="date">{achievement.date}</span>
               </div>
             </div>
           ))}
@@ -76,4 +114,4 @@ const Achievements = () => {
   );
 };
 
-export default Achievements; 
+export default Achievements;

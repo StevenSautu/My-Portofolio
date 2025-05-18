@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import './ContactForm.css';
-
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +9,7 @@ const ContactForm = () => {
     subject: '',
     message: ''
   });
-  
+
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -24,53 +24,66 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ submitting: true, submitted: false, error: null });
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setStatus({ 
-        submitting: false, 
-        submitted: true, 
-        error: null 
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message
+    };
+
+    console.log('Sending email with:', templateParams);
+
+    try {
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      );
+
+      setStatus({ submitting: false, submitted: true, error: null });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      console.error('EmailJS Error:', err);
+      setStatus({
+        submitting: false,
+        submitted: false,
+        error: err?.text || 'Failed to send message. Please try again later.'
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setStatus(prev => ({ ...prev, submitted: false }));
-      }, 5000);
-    }, 1500);
+    }
   };
 
   return (
     <section id="contact" className="contact-section">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title">Contact</h2>
         <div className="contact-container">
           <div className="contact-info-card">
             <h3>Contact Information</h3>
             <div className="contact-details">
               <div className="contact-item">
+                <i className="fas fa-phone"></i>
+                <div>
+                  <h4>Phone Number</h4>
+                  <p>+260973608983</p>
+                </div>
+              </div>
+              <div className="contact-item">
+                <i className="fab fa-whatsapp"></i>
+                <div>
+                  <h4>WhatsApp</h4>
+                  <p>+260973608983</p>
+                </div>
+              </div>
+              <div className="contact-item">
                 <i className="fas fa-envelope"></i>
                 <div>
                   <h4>Email</h4>
                   <p>sautusteve@gmail.com</p>
-                </div>
-              </div>
-              <div className="contact-item">
-                <i className="fas fa-phone"></i>
-                <div>
-                  <h4>Phone</h4>
-                  <p>+260 973 608 983</p>
                 </div>
               </div>
               <div className="contact-item">
@@ -80,29 +93,33 @@ const ContactForm = () => {
                   <p>Lusaka, Zambia</p>
                 </div>
               </div>
-              <div className="contact-item">
-                <i className="fas fa-graduation-cap"></i>
-                <div>
-                  <h4>Education</h4>
-                  <p>Bachelor of ICT - Education, Chalimbana University</p>
-                </div>
-              </div>
             </div>
+
+            <h3 className="social-title">Social Media Links</h3>
             <div className="social-links-contact">
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-github"></i>
+              <a href="https://github.com/StevenSautu" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-github"></i><span>GitHub</span>
               </a>
-              <a href="https://linkedin.com/in/sautusteve" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/sautu-steven-8b697228b" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin"></i><span>LinkedIn</span>
               </a>
               <a href="https://facebook.com/steve.erics.sautu" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook"></i>
+                <i className="fab fa-facebook"></i><span>Facebook</span>
+              </a>
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-twitter"></i><span>Twitter/X</span>
               </a>
             </div>
           </div>
-          
+
           <div className="contact-form-card">
             <h3>Send Me a Message</h3>
+            {status.error && (
+              <div className="error-message">
+                <i className="fas fa-exclamation-circle"></i>
+                <p>{status.error}</p>
+              </div>
+            )}
             {status.submitted ? (
               <div className="success-message">
                 <i className="fas fa-check-circle"></i>
@@ -180,4 +197,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm; 
+export default ContactForm;

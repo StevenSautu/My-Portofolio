@@ -1,42 +1,54 @@
 import React, { useState, useEffect } from 'react';
+import './DarkModeToggle.css';
 
 const DarkModeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check if user has a preference saved
+    // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDarkMode(true);
-      document.body.classList.add('dark-mode');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      enableDarkMode();
     }
   }, []);
 
+  const enableDarkMode = () => {
+    setIsDarkMode(true);
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
+  };
+
+  const disableDarkMode = () => {
+    setIsDarkMode(false);
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('theme', 'light');
+  };
+
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    
-    if (!isDarkMode) {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
+    if (isDarkMode) {
+      disableDarkMode();
     } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
+      enableDarkMode();
     }
   };
 
   return (
     <button 
-      className="dark-mode-toggle"
+      className={`dark-mode-toggle ${isDarkMode ? 'dark' : 'light'}`}
       onClick={toggleDarkMode}
       aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {isDarkMode ? (
-        <i className="fas fa-sun"></i>
-      ) : (
-        <i className="fas fa-moon"></i>
-      )}
+      <div className="toggle-switch">
+        {isDarkMode ? (
+          <i className="fas fa-sun"></i>
+        ) : (
+          <i className="fas fa-moon"></i>
+        )}
+      </div>
     </button>
   );
 };
 
-export default DarkModeToggle; 
+export default DarkModeToggle;
