@@ -37,7 +37,7 @@ const AboutMe = () => {
                   Now in my final year at Chalimbana University, I blend academic knowledge with hands-on experience from projects, internships, 
                   and tech initiatives. I focus on building scalable, user-friendly software that solves real-world challenges, especially in education, 
                   agriculture, and public service. I'm also an articulate public speaker, passionate about sharing insights and inspiring others through 
-                  tech conversations. My goal is to use technology to promote inclusion, accessibility, and sustainable progress.
+                  tech conversations. My goal is to use technology to promote inclusion, accessibility, and sustainable progress...
                 </p>
 
                 <div className="cta-buttons">
